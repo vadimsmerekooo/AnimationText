@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="AnimationText.AnimationTXT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AnimationText"
+             mc:Ignorable="d" 
+             x:Name="Control"
+             d:DesignHeight="250" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="65"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Width="Auto">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <StackPanel.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </StackPanel.Effect>
+            <StackPanel.Triggers>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB1" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.25" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB2" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.25" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB3" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.25" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB4" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.25" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB2" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.35" Value="110"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB1" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.30" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.45" Value="40"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB3" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.40" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.70" Value="110"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TB4" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.65" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.9" Value="150"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </StackPanel.Triggers>
+            <TextBlock VerticalAlignment="Center" Width="45" Foreground="#1c1c1c" FontWeight="SemiBold" Text="X"/>
+            <TextBlock x:Name="TB2" VerticalAlignment="Center" Width="0" Foreground="#8DD28A" FontWeight="SemiBold" Text="aml"/>
+            <TextBlock VerticalAlignment="Center" Width="45" Foreground="#1c1c1c" FontWeight="SemiBold" Text="C"/>
+            <TextBlock x:Name="TB1" VerticalAlignment="Center" Width="0" Foreground="#8DD28A" FontWeight="SemiBold" Text="#"/>
+            <TextBlock Text="💜"/>
+            <TextBlock VerticalAlignment="Center" Width="45" Foreground="#1c1c1c" FontWeight="SemiBold" Text="D"/>
+            <TextBlock x:Name="TB3" VerticalAlignment="Center" Width="0" Foreground="#8DD28A" FontWeight="SemiBold" Text="ima"/>
+            <TextBlock VerticalAlignment="Center" Width="45" Foreground="#1c1c1c" FontWeight="SemiBold" Text="V"/>
+            <TextBlock x:Name="TB4" VerticalAlignment="Center" Width="0" Foreground="#8DD28A" FontWeight="SemiBold" Text="adim"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
